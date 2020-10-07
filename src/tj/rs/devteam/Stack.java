@@ -19,6 +19,8 @@ class Parser {
                     stack.pop();
                 } else if (peek.equals("{") && s.substring(i, i + 1).equals("}")) {
                     stack.pop();
+                }  else if (peek.equals("[") && s.substring(i, i + 1).equals("]")) {
+                    stack.pop();
                 } else {
                     stack.push(s.substring(i, i + 1));
                 }
@@ -32,12 +34,15 @@ public class Stack {
     public static void main(String[] args) {
         Parser parser = new Parser();
 
-        Scanner in = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
 
-        while (in.hasNext()) {
-            System.out.println(parser.isBalanced(in.next()));
+        while (sc.hasNext()) {
+            String input=sc.next();
+            //Complete the code
+            System.out.println(parser.isBalanced(input));
+
         }
 
-        in.close();
+        sc.close();
     }
 }
