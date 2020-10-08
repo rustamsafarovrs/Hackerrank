@@ -12,6 +12,14 @@ public class JavaStringTokens {
         String s = scan.nextLine();
         // Write your code here.
 
+        s = s.trim();
+        if (s.length() > 400000) {
+            return;
+        }
+        if (s.length() == 0) {
+            System.out.println(0);
+            return;
+        }
         String[] t = s.split("[!,?._'@\\s]+");
         System.out.println(t.length);
         for (String value : t) {
